@@ -59,8 +59,6 @@
                                     onsubmit="return confirm('Are you sure?');">
                                     @csrf
                                     @method('DELETE')
-
-
                                     <button type="submit"><i class="fas fa-trash"></i></button>
                                     </form>
 
