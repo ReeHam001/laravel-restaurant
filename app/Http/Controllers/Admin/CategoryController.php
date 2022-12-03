@@ -52,7 +52,7 @@ class CategoryController extends Controller
         ]);
         $image = $category->image;
         if ($request->hasFile('image')) {
-            Storage::delete($category->image);
+            Storage::delete($category->image); // storage facade
             $image = $request->file('image')->store('public/categories');
         }
 
@@ -61,7 +61,7 @@ class CategoryController extends Controller
             'description' => $request->description,
             'image' => $image
         ]);
-        return to_route('admin.categories.index')->with('success', 'Category updated successfully.');
+        return to_route('admin.categories.index')->with('warning', 'Category updated successfully.');
     }
 
 
