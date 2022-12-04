@@ -10,7 +10,7 @@
             <span class="icon text-gray-600">
                 <i class="fas fa-arrow-right text-white"></i>
             </span>
-            <span class="text">Category</span>
+            <span class="text">Back to categories</span>
         </a>
     </div>
 
