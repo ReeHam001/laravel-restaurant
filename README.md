@@ -2,6 +2,7 @@
 
 ### Technique:
 - Laravel 9.19
+- Php 8.1.12
 - Authentication(Laravel Breeze)
 
 
