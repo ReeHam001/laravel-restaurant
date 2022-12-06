@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Enums\TableStatus;
-
+use App\Enums\TableStatusEnum;
 use App\Http\Requests\ReservationStoreRequest;
 use App\Models\Reservation;
 use App\Models\Table;
@@ -23,7 +22,7 @@ class ReservationController extends Controller
 
     public function create()
     {
-        $tables = Table::where('status', TableStatus::Avalaiable)->get();
+        $tables = Table::where('status', TableStatusEnum::Avalaiable)->get();
         return view('admin.reservations.create', compact('tables'));
     }
 
@@ -46,7 +45,7 @@ class ReservationController extends Controller
 
     public function edit(Reservation $reservation)
     {
-        $tables = Table::where('status', TableStatus::Avalaiable)->get();
+        $tables = Table::where('status', TableStatusEnum::Avalaiable)->get();
         return view('admin.reservations.edit', compact('reservation', 'tables'));
     }
 

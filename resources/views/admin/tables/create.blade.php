@@ -30,7 +30,7 @@
                                         class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                                 </div>
                                 @error('name')
-                                    <div class="text-sm text-red-400">{{ $message }}</div>
+                                    <div class="text-sm text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -42,7 +42,7 @@
                                         class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                                 </div>
                                 @error('guest_number')
-                                    <div class="text-sm text-red-400">{{ $message }}</div>
+                                    <div class="text-sm text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -56,7 +56,7 @@
                                     </select>
                                 </div>
                                 @error('status')
-                                <div class="text-sm text-red-400">{{ $message }}</div>
+                                <div class="text-sm text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -70,7 +70,7 @@
                                     </select>
                                 </div>
                                 @error('location')
-                                <div class="text-sm text-red-400">{{ $message }}</div>
+                                <div class="text-sm text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
 

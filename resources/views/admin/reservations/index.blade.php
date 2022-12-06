@@ -6,19 +6,19 @@
     </x-slot>
 
     <div class="col-m-12 float-right">
-        <a href="{{ route('admin.categories.create') }}" class="btn btn-success btn-icon-split flex-l">
+        <a href="{{ route('admin.reservations.create') }}" class="btn btn-success btn-icon-split flex-l">
             <span class="icon text-white-50">
                 <i class="fas fa-flag"></i>
             </span>
-            <span class="text">Add Category</span>
+            <span class="text">New Reservation</span>
         </a>
     </div>
 
     <div class="py-12">
-        <!-- Categories Table -->
+        <!-- Reservation Table -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Categories Table</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Reservation Table</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -26,36 +26,41 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Description</th>
-                                <th>Image</th>
+                                <th>Email</th>
+                                <th>Date</th>
+                                <th>Table</th>
+                                <th>Guests</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>Name</th>
-                                <th>Description</th>
-                                <th>Image</th>
+                                <th>Email</th>
+                                <th>Date</th>
+                                <th>Table</th>
+                                <th>Guests</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                        @foreach ($categories as $category)
+                        @foreach ($reservations as $reservation)
                             <tr>
-                                <td>{{ $category->name }}</td>
-                                <td>{{ $category->description }}</td>
+                                <td>{{ $reservation->first_name }} {{ $reservation->last_name }}</td>
+                                <td>{{ $reservation->email  }}</td>
+                                <td>{{ $reservation->res_date }}</td>
+                                <td>{{ $reservation->table->name }}</td>
+                                <td>{{ $reservation->guest_number }}</td>
+
                                 <td>
-                                    <img src="{{ Storage::url($category->image) }}" class="w-16 h-16 rounded">
-                                </td>
-                                <td>
-                                    <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-warning btn-circle btn-sm">
+                                    <a href="{{ route('admin.reservations.edit', $reservation->id) }}" class="btn btn-warning btn-circle btn-sm">
                                         <i class="fas fa-exclamation-triangle"></i>
                                     </a>
 
                                     <form
                                     class="btn btn-danger btn-circle btn-sm"
                                     method="POST"
-                                    action="{{ route('admin.categories.destroy', $category->id) }}"
+                                    action="{{ route('admin.reservations.destroy', $reservation->id) }}"
                                     onsubmit="return confirm('Are you sure?');">
                                     @csrf
                                     @method('DELETE')
