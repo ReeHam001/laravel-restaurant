@@ -39,6 +39,6 @@ class DateBetween implements Rule
      */
     public function message()
     {
-        return 'Please choose the date between a week from  now.';
+        return 'Please choose the date through a week from  now.';
     }
 }

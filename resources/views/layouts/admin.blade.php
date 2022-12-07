@@ -176,7 +176,6 @@
                     <div class="row">
                         <main class="m-2 p-8 w-full">
                             <div>
-
                                 @if (session()->has('danger'))
                                 <div class="card bg-danger text-white shadow my-3 text-bold">
                                     <div class="card-body">
@@ -200,7 +199,6 @@
                                 </div>
                                 @endif
                             </div>
-
 
                             {{ $slot }}
 

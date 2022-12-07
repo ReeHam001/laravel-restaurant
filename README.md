@@ -9,12 +9,12 @@
 
 ### Features:
 
-- Authentication  (admin - clients)
+- Authentication  (admin)
 - 
 
 
 
-## Login control panel:
+## Login control panel data seeder:
 - User name : admin@admin.com
 - Password  : password
 
